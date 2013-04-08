@@ -1,0 +1,50 @@
+<!--templates/home.html-->
+{% extends "base.html" %}
+{% load i18n %}
+
+    {% block href_one %}
+    /add_check
+    {% endblock %}
+    {%  block tab_one %}
+    Add Check
+    {% endblock %}
+
+    {% block href_two %}
+    /add_expense
+    {% endblock %}
+    {%  block tab_two %}
+    Add Expense
+    {%  endblock %}
+
+    {% block href_three%}
+    /add_account
+    {% endblock %}
+    {%  block tab_three %}
+    Check Account
+    {%  endblock %}
+
+    {% block nav_header %}
+    Account Overview
+    {% endblock %}
+    {%  block ex_link %}
+    Savings Overview
+    {%  endblock %}
+    {%  block ex_link_two %}
+    Checking Overview
+    {%  endblock %}
+
+{% block body_class %}{{ block.super }}home{% endblock %}
+
+{% block content %}
+    {% block header_one %} Welcome to my Checking System {% endblock %}
+    {% block p_one %} You can start here to create an account, from there you can add checks, create a checking and savings account, as well as expenses. {% endblock %}
+{% endblock %}
+
+{% if user.is_authenticated %}
+{% block recent %}
+
+{% endblock %}
+{% else %}
+
+
+{% endif %}

@@ -1,0 +1,22 @@
+{% extends "home.html" %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/add_account.css" />
+{% endblock %}
+{% block main_container %}
+
+    <form method="post">
+        {% csrf_token %}
+        <label>Title:</label>
+        <input type="text" id="expense_name" name="expense_name" placeholder="Rent" required>
+
+        <label>Amount:</label>
+        <input type="number" id="amount_id" name="amount" placeholder="350" required>
+
+        <label>Reason:</label>
+        <input type="text" id="reason_id" name="reason" required>
+
+        <br><br>
+        <input type="submit" value="Add Expense" formmethod="POST" />
+    </form>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "home.html" %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/add_account.css" />
+{% endblock %}
+{% block main_container %}
+    <form method="post">
+        {% csrf_token %}
+        <label>Username:</label>
+        <input type="text" id="first_name" name="first_name" placeholder="Jane" required>
+
+        <label>Password:</label>
+        <input type="password" id="pw_id" name="pass_word" placeholder="********" required>
+
+        <br><br>
+        <input type="submit" value="Login" formmethod="POST" />
+    </form>
+{% endblock %}
