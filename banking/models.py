@@ -12,6 +12,8 @@ class Account(models.Model):
     saving_account = models.ForeignKey('Saving', related_name="Savings")
     #Hide balance field in the admin panel.
     balance = models.DecimalField(verbose_name="Account Balance",decimal_places=2, max_digits=10, default=0.0)
+    #saving_balance = saving_account.balance
+    #checking_balance = checking_account.balance
     date_created = models.DateField(auto_now_add=True)
 
     #Gets account, calls self.objects.get() but encapsulates it into a method
