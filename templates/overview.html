@@ -1,0 +1,27 @@
+{% extends "home.html" %}
+
+{% block main_container %}
+
+    {% block overview %}
+        <div class="overview_container" id="overview_id">
+            <h1>{{ account.account_name }}</h1>
+            <p> Account Balance: {{ balance }}</p>
+            <p> Savings Balance: {{ savings_balance }} </p>
+            <p> Checking Balance: {{ checking_balance }}</p>
+            <div class="checks" id="check_container">
+                {% for check in checks %}
+                    <div id="check_{{ check.id }}">
+                        {{ check.memo }}
+                        {{ check.expense.amount }}
+                        {{ check.payee.first_name }}
+                        {{ check.payee.last_name }}
+                        {{ check.payee.relation }}
+                    </div>
+                {% endfor %}
+            </div>
+
+         </div>
+    {% endblock %}
+
+{% endblock %}
+

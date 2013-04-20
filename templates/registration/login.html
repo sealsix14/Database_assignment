@@ -1,0 +1,15 @@
+{% extends "form.html" %}
+
+{% block main_container %}
+    <h1>User Login</h1>
+    {% if form.errors %}
+        <p>Your username and password didn't match!
+            Please try again!</p>
+    {% endif %}
+{% endblock %}
+{% block form_content %}
+        <p><label>Username:</label>{{ form.username }}</p>
+        <p><label>Password:</label>{{ form.password }}</p>
+        <input type="hidden" name="next" value="/" />
+        <input type="submit" value="login" />
+{% endblock %}

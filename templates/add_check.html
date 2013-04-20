@@ -1,41 +1,8 @@
-{% extends "home.html" %}
-{% block main_container %}
-    <form>
-        <table>
-            <tr>
-                <td>
-                <label class="check_memo"> Check Memo </label>
-                </td>
-                <td>
-                <input class="check_memo" placeholder="Enter Memo" type="text" required>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label class="check_amount"> Check Amount </label>
-                </td>
-                <td>
-                    <input class="check_amount" type="range" min="0" max="100000" step="1" value="10" required>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input class="check_submit" type="submit" value="Add Check">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label class="check_memo"> Check Memo </label>
-                </td>
-                <td>
-                    <input class="check_memo" placeholder="Enter Memo" type="text" required>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input class="check_date" type="date" required>
-                </td>
-            </tr>
-        </table>
-    </form>
+{% extends "form.html" %}
+{% block form_action %} . {% endblock %}
+{% block form_content %}
+    {% for f in form %}
+    {{ f.errors }}
+    {{ f.label_tag }}{{ f }}
+    {% endfor %}
 {% endblock %}

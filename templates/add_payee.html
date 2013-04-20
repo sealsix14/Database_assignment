@@ -1,0 +1,13 @@
+{% extends "form.html" %}
+{% block form_method %} post {% endblock %}
+{% block form_action %} . {% endblock %}
+{% block form_content %}
+
+    {%  for f in form %}
+        {{ f.errors }}
+        {{ f.label_tag }}{{ f }}
+    {% endfor %}
+
+{% endblock %}
+
+{% block submit_value %} Add Payee {% endblock %}

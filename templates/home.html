@@ -1,5 +1,13 @@
 <!--templates/home.html-->
 {% extends "base.html" %}
+{% block account_title %}
+{% if user.is_authenticated %}
+    {{ user }}'s Account
+{% else %}
+    Finance System
+{% endif %}
+{% endblock %}
+
 {% load i18n %}
 
     {% block href_one %}

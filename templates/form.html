@@ -1,0 +1,17 @@
+{% extends "home.html" %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/add_account.css" />
+{% endblock %}
+
+{% block main_container %}
+
+    <form method="{% block form_method %} post {% endblock %}" action="{% block form_action %} {% endblock %}">
+        {% csrf_token %}
+        {% block form_content %}
+
+        {% endblock %}
+        <br><br>
+        <input type="submit" value="{% block submit_value %}Create Account {% endblock %}" formmethod="POST" />
+    </form>
+{% endblock %}
